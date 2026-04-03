@@ -1,0 +1,73 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color-scheme: light;
+  --page-bg: #f8fafc;
+  --page-text: #0f172a;
+  --page-border: rgba(15, 23, 42, 0.15);
+  --page-gradient: radial-gradient(circle at 10% -5%, rgba(16, 185, 129, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.3), transparent 40%);
+}
+
+.dark {
+  color-scheme: dark;
+  --page-bg: #020617;
+  --page-text: #e2e8f0;
+  --page-border: rgba(148, 163, 184, 0.15);
+  --page-gradient: radial-gradient(circle at 10% -5%, rgba(16, 185, 129, 0.2), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.25), transparent 40%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--page-gradient);
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  font-family: inherit;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.animate-float {
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.backdrop-card {
+  backdrop-filter: blur(16px);
+}

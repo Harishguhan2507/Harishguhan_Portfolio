@@ -1,0 +1,10 @@
+﻿<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#0EA5E9" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.55" />
+    </linearGradient>
+  </defs>
+  <path d="M393 124C407 197 392 293 326 354C260 415 168 429 103 379C38 329 -5 220 37 138C79 56 196 5 279 27C362 49 379 51 393 124Z" fill="url(#heroGradient)"/>
+</svg>
