@@ -1,16 +1,16 @@
 ﻿import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence,motion} from 'framer-motion'
 import heroBlob from '../assets/hero-blob.svg'
 
 const heroPhrases = [
-  'React | AWS | Terraform',
+  'React | Python | AWS  | Terraform',
   'Full-Stack Cloud Engineer',
   'Building scalable cloud-native applications',
 ]
 
 const heroStats = [
   { label: 'Experience', value: '4+ Years' },
-  { label: 'Specialty', value: 'React + AWS + Terraform' },
+  { label: 'Specialty', value: 'React + Python + AWS + Terraform' },
   { label: 'Focus', value: 'UI/UX, Performance, Scalable Systems' },
 ]
 

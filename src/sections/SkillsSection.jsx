@@ -8,7 +8,6 @@ const SkillsSection = () => (
       <SectionHeading
         pretitle="Expertise"
         title="Skills"
-        subtitle="Categorized proficiencies so recruiters can scan what matters most."
       />
       <div className="grid gap-6 md:grid-cols-2">
         {skillGroups.map((group, index) => (
