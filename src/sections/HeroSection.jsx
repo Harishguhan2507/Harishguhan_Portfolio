@@ -1,42 +1,54 @@
-﻿import { useEffect, useState } from 'react'
-import { AnimatePresence,motion} from 'framer-motion'
-import heroBlob from '../assets/hero-blob.svg'
+﻿import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import heroBlob from "../assets/hero-blob.svg";
+import heroPortrait from "../assets/HeroSectionImg.png";
 
 const heroPhrases = [
-  'React | Python | AWS  | Terraform',
-  'Full-Stack Cloud Engineer',
-  'Building scalable cloud-native applications',
-]
+  "React | AWS | Python | Terraform",
+  "Full-Stack Cloud Engineer",
+  "Building scalable cloud-native applications",
+];
 
 const heroStats = [
-  { label: 'Experience', value: '4+ Years' },
-  { label: 'Specialty', value: 'React + Python + AWS + Terraform' },
-  { label: 'Focus', value: 'UI/UX, Performance, Scalable Systems' },
-]
+  { label: "Experience", value: "4+ Years" },
+  { label: "Specialty", value: "React + AWS + Python + Terraform" },
+  { label: "Focus", value: "UI/UX, Performance, Scalable Systems" },
+];
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-}
+};
 
 const HeroSection = () => {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % heroPhrases.length)
-    }, 4200)
-    return () => clearInterval(timer)
-  }, [])
+      setIndex((prev) => (prev + 1) % heroPhrases.length);
+    }, 4200);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
       id="hero"
       className="relative flex min-h-screen items-center overflow-hidden px-6 py-16 text-slate-900 dark:text-slate-100 sm:py-20"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-16 right-10 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl animate-float" />
-        <div className="absolute -bottom-24 left-1/2 -z-10 w-[520px] -translate-x-1/2 opacity-40">
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover opacity-40 
+             bg-[center_80%]
+             md:bg-[center_14%]"
+          style={{ backgroundImage: `url(${heroPortrait})` }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-slate-950/60 via-slate-900/30 to-slate-900/40"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute -top-16 right-10 h-72 w-72 rounded-full bg-emerald-500/30 blur-3xl animate-float" />
+        <div className="pointer-events-none absolute -bottom-24 left-1/2 -z-10 w-[520px] -translate-x-1/2 opacity-40">
           <img src={heroBlob} alt="" className="w-full" />
         </div>
       </div>
@@ -89,8 +101,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-3xl text-lg text-slate-600 dark:text-slate-300 md:text-xl"
         >
-          Building scalable cloud-native applications with strong UI/UX and clean architecture, focused on
-          production-ready quality for modern product teams.
+          Building scalable cloud-native applications with strong UI/UX and
+          clean architecture, focused on production-ready quality for modern
+          product teams.
         </motion.p>
         <motion.div
           variants={textVariants}
@@ -122,14 +135,18 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-lg shadow-emerald-500/10 backdrop-card transition-colors duration-500 dark:border-white/10 dark:bg-white/5"
             >
-              <p className="text-sm uppercase tracking-[0.4em] text-emerald-500/80">{stat.label}</p>
-              <p className="mt-3 text-lg font-semibold text-slate-900 dark:text-white">{stat.value}</p>
+              <p className="text-sm uppercase tracking-[0.4em] text-emerald-500/80">
+                {stat.label}
+              </p>
+              <p className="mt-3 text-lg font-semibold text-slate-900 dark:text-white">
+                {stat.value}
+              </p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
