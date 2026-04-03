@@ -37,7 +37,6 @@ const FocusAreas = () => (
       <SectionHeading
         pretitle="Mindset"
         title="Focus Areas"
-        subtitle="Same visual weight as the skills so recruiters can see what shapes every delivery."
       />
       <motion.article
         initial={{ opacity: 0, y: 20 }}
