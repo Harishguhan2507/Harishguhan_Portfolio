@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import heroBlob from "../assets/hero-blob.svg";
 import heroPortrait from "../assets/HeroSectionImg.png";
+import resumePdf from "../assets/Harishguhan_Muruganantham_Resume.pdf";
 
 const heroPhrases = [
   "React | AWS | Python | Terraform",
@@ -119,10 +120,11 @@ const HeroSection = () => {
             View Projects
           </a>
           <a
-            href="#contact"
+            href={resumePdf}
+            download="Harishguhan_Muruganantham_Resume.pdf"
             className="inline-flex items-center justify-center rounded-full border border-slate-900/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-900 transition hover:border-emerald-400 dark:border-white/30 dark:text-white"
           >
-            Contact Me
+            Download Resume
           </a>
         </motion.div>
         <div className="grid gap-4 sm:grid-cols-3">
